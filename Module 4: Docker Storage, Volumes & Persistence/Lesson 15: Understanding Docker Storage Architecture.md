@@ -32,17 +32,14 @@ That’s why we use **volumes** — to move it outside overlay2 and make it pers
 
 ### 1️ Docker’s File System Stack
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/a9ab21d9-3207-46af-bcbb-b2af1c854ff8" />
+
 ```
 Container FS
  ├── Writable Layer  (unique to each container)
  ├── Read-only Layers (from image)
  ├── Union Mount (overlay2 merges them)
  └── Volumes / Mounts (optional, for persistence)
-
-
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/a9ab21d9-3207-46af-bcbb-b2af1c854ff8" />
-
-
 ```
 
 When you inspect `/var/lib/docker/overlay2`, you’ll see folders named like:
